@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+
+.theme-toggle {
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Card Flip Animation */
+.card-container {
+  perspective: 1000px;
+  margin-bottom: 1.5rem;
+  height: 350px; /* Reduced from 420px to 350px */
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-container.flipped .card {
+  transform: rotateY(180deg);
+}
+
+/* Make card content fill available space */
+.card-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* For Safari support */
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-front, .card-back {
+  background-color: white;
+  color: #1a202c;
+}
+
+.dark .card-front, .dark .card-back {
+  background-color: #1e293b;
+  color: white;
+}
+
+.card-front {
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.card-actions {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+/* Icon colors */
+.card-front .fa-star, .card-back .fa-star {
+  color: #eab308; /* Yellow */
+}
+
+.card-front .fa-dollar-sign, .card-back .fa-dollar-sign {
+  color: #22c55e; /* Green */
+}
+
+.card-front .fa-poll, .card-back .fa-poll {
+  color: #3b82f6; /* Blue */
+}
+
+.card-front .fa-info-circle, .card-back .fa-info-circle,
+.card-front .fa-user, .card-back .fa-user,
+.card-front .fa-globe, .card-back .fa-globe,
+.card-front .fa-check-circle, .card-back .fa-check-circle,
+.card-front .fa-money-bill-wave, .card-back .fa-money-bill-wave,
+.card-front .fa-mobile-alt, .card-back .fa-mobile-alt {
+  color: #64748b; /* Slate gray */
+}
+
+.dark .card-front .fa-info-circle, 
+.dark .card-back .fa-info-circle,
+.dark .card-front .fa-user, 
+.dark .card-back .fa-user,
+.dark .card-front .fa-globe, 
+.dark .card-back .fa-globe,
+.dark .card-front .fa-check-circle, 
+.dark .card-back .fa-check-circle,
+.dark .card-front .fa-money-bill-wave, 
+.dark .card-back .fa-money-bill-wave,
+.dark .card-front .fa-mobile-alt, 
+.dark .card-back .fa-mobile-alt {
+  color: #94a3b8; /* Light gray/blue for dark mode */
+}
+
+/* Button styles */
+.sign-up-btn, .details-btn {
+  transition: all 0.3s ease;
+}
+
+.sign-up-btn:hover, .details-btn:hover {
+  transform: translateY(-2px);
+}
+
+.back-btn {
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+} 
