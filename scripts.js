@@ -19,6 +19,7 @@ tailwind.config = {
 
 let surveyData = [];
 
+
 // Theme toggle functionality
 document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('themeToggle');
@@ -93,7 +94,35 @@ function renderCards() {
   const filteredData = surveyData.filter(item => 
     item['Website Name'].toLowerCase().includes(searchTerm)
   );
+  console.log(filteredData);
+  for(let i = 0; i < filteredData.length; i++){ 
+    let count = 0;
+    let sum = 0;
+  
+    const trustpilot = parseFloat(filteredData[i]["Trustpilot Ratings"]);
+    if (!isNaN(trustpilot)) {
+      sum += trustpilot;
+      count += 1;
+    }
+  
+    const appStore = parseFloat(filteredData[i]["App Store Ratings"]);
+    if (!isNaN(appStore)) {
+      sum += appStore;
+      count += 1;
+    }
+  
+    const googlePlay = parseFloat(filteredData[i]["Google Play Ratings"]);
+    if (!isNaN(googlePlay)) {
+      sum += googlePlay;
+      count += 1;
+    }
+  
+    filteredData[i]["priorityNumber"] = count > 0 ? (sum / count) : 0;
+  }
+  
 
+  // Sort based on priorityNumber in descending order
+  filteredData.sort((a, b) => b.priorityNumber - a.priorityNumber); // Correct sorting logic
   // Show no results message if no data matches
   if (filteredData.length === 0) {
     const noResults = document.createElement('div');
