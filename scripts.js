@@ -79,6 +79,26 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
     });
+
+  // About Us Modal functionality
+  const aboutUsBtn = document.getElementById('aboutUs');
+  const aboutUsModal = document.getElementById('aboutUsModal');
+  const closeAboutUs = document.getElementById('closeAboutUs');
+
+  if (aboutUsBtn && aboutUsModal && closeAboutUs) {
+    aboutUsBtn.addEventListener('click', () => {
+      aboutUsModal.classList.remove('hidden');
+    });
+    closeAboutUs.addEventListener('click', () => {
+      aboutUsModal.classList.add('hidden');
+    });
+    // Optional: Close modal on background click
+    aboutUsModal.addEventListener('click', (e) => {
+      if (e.target === aboutUsModal) {
+        aboutUsModal.classList.add('hidden');
+      }
+    });
+  }
 });
 
 function renderCards() {
