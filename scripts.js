@@ -122,7 +122,19 @@ function renderCards() {
   
 
   // Sort based on priorityNumber in descending order
-  filteredData.sort((a, b) => b.priorityNumber - a.priorityNumber); // Correct sorting logic
+  // First, sort by explicit priority if available
+  filteredData.sort((a, b) => {
+    if (a.Priority && b.Priority) {
+      return a.Priority - b.Priority; // Sort by priority if both have it
+    } else if (a.Priority) {
+      return -1; // a has priority, so it comes first
+    } else if (b.Priority) {
+      return 1; // b has priority, so it comes first
+    } else {
+      return b.priorityNumber - a.priorityNumber; // Otherwise, sort by priorityNumber
+    }
+  });
+
   // Show no results message if no data matches
   if (filteredData.length === 0) {
     const noResults = document.createElement('div');
