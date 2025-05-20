@@ -32,16 +32,17 @@
     <!-- Header with logo and theme toggle -->
     <header class="mb-8">
       <div class="flex flex-col items-center">
-        <div class="flex justify-end w-full items-center">
-          <div class="flex items-center">
-            <button id="aboutUs" class="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-bold py-2 px-4 rounded mr-2">
-              About Us
-            </button>
-            <button id="themeToggle" class="theme-toggle p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none">
-              <i class="fas fa-sun text-yellow-500 dark:hidden text-xl"></i>
-              <i class="fas fa-moon text-blue-300 hidden dark:inline text-xl"></i>
-            </button>
-          </div>
+        <div class="flex justify-end w-full items-center space-x-2">
+          <a href="https://x.com/everysurvey" target="_blank" rel="noopener" aria-label="X (Twitter)" class="text-gray-400 hover:text-blue-400 transition-colors mr-2">
+            <i class="fab fa-x-twitter text-2xl"></i>
+          </a>
+          <button id="aboutUs" class="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 font-bold py-2 px-4 rounded mr-2">
+            About Us
+          </button>
+          <button id="themeToggle" class="theme-toggle p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none">
+            <i class="fas fa-sun text-yellow-500 dark:hidden text-xl"></i>
+            <i class="fas fa-moon text-blue-300 hidden dark:inline text-xl"></i>
+          </button>
         </div>
         <div class="flex flex-col items-center space-y-1">
           <h1 class="text-3xl font-bold text-center">Every Survey Website</h1>
@@ -78,6 +79,12 @@
     <div class="bg-gray-800 text-gray-100 rounded-xl shadow-xl w-full max-w-2xl mx-4 p-6 relative">
       <button id="closeAboutUs" class="absolute top-4 right-4 text-2xl text-gray-400 hover:text-gray-200 focus:outline-none">&times;</button>
       <h2 class="text-3xl font-bold mb-6">About Our Website</h2>
+      <div class="flex items-center mb-6">
+        <a href="https://x.com/everysurvey" target="_blank" rel="noopener" class="flex items-center space-x-2 text-gray-400 hover:text-blue-400 transition-colors">
+          <i class="fab fa-twitter text-2xl"></i>
+          <span class="text-lg font-medium">Follow us on X</span>
+        </a>
+      </div>
       <div class="mb-4 bg-gray-700 rounded-lg">
         <div class="flex justify-between items-center px-4 py-2 border-b border-gray-600">
           <span class="font-semibold text-lg">Our Mission</span>
